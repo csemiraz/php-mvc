@@ -99,8 +99,9 @@ const fieldValidator = {
                 if (eval('/^.{' + option.limit + '}$/').test(option.data)) valueStatus = true;
                 break;
             case 'wordLimit':
-                let patern =  new RegExp('/^(?:\w+\W+){0,29}(?:\w+)$/') ;
-                if (patern.test(option.data)) valueStatus = true;
+                let word = option.data.split(' ');
+                let limits = option.limit.split(',');
+                if (word.length >= limits[0] && word.length < limits[1]) valueStatus = true;
                 break;
             case 'email':
                 if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(option.data)) valueStatus = true;

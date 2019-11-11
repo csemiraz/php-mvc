@@ -3,6 +3,7 @@
 require_once 'app/bootstrap/Start.php';
 
 use App\controller\HomeController;
+use App\controller\PurchaseController;
 use App\models\Purchase;
 use Route\Request;
 use Route\Router;
@@ -14,26 +15,26 @@ $router = new Router(new Request);
 
 
 $router->get('/', function($request) {
-    $db =  new HomeController($request) ;
-   return $db->home();
+    $controller =  new HomeController($request) ;
+   return $controller->home();
 });
 
-$router->get('/Home', function($request) {
-    $db =  new HomeController($request) ;
-   return $db->home();
+$router->post('/saveData', function($request) {
+    $controller =  new PurchaseController($request) ;
+   return $controller->saveData();
 });
 
 
 
 $router->get('/databaseSetup', function($request)   {
-    $db =  new DatabaseSetup($request) ;
-    return $db->getDBForm();
+    $controller =  new DatabaseSetup($request) ;
+    return $controller->getDBForm();
 });
 
 
 $router->post('/databaseSetup', function($request)   {
-    $db =  new DatabaseSetup($request) ;
-    return $db->saveDBConfig();
+    $controller =  new DatabaseSetup($request) ;
+    return $controller->saveDBConfig();
 });
 
 

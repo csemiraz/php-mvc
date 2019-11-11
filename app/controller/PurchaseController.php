@@ -3,9 +3,24 @@ namespace App\controller;
 
 class PurchaseController
 {
-
-    public function __construct()
+    public $request;
+    public function __construct($request)
     {
-        die('Buyer controller');
+        $this->request = $request;
     }
+
+
+    public function saveData()
+    {
+
+        return json($this->request->get('amount'), 200);
+        if (!$this->request->get('database_name') || !$this->request->get('user_name') || !$this->request->get('password')) {
+            return json('Please check required Fields', 419);
+        }
+
+    }
+
+
+
+
 }

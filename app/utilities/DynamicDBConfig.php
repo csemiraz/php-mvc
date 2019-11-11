@@ -55,7 +55,7 @@ class DynamicDBConfig
 
 
     public  static function createEnvFile($data){
-        $fp = fopen(__DIR__ . "/../config/db.env", 'w');
+        $fp = fopen(__DIR__ . "/../config/db.env", 'w') or die('Sorry! permission problem');
         fwrite($fp, $data);
         // chmod("filename.php", 0644);
         fclose($fp);

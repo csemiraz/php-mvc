@@ -45,7 +45,7 @@ include_once 'layout/header.php';
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
+                    <h4 class="modal-title">Data Entry</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -70,7 +70,7 @@ include_once 'layout/header.php';
                         </div>
 
                         <div class="form-group col-sm-6">
-                            <label for="email">Receipt ID  :</label>
+                            <label for="email"> Receipt ID  :</label>
                             <input type="text" class="form-control" data-validate="letter" required  name="receipt_id">
                             <div class="invalid-feedback">
                                 Must be text / Letter
@@ -130,16 +130,7 @@ include_once 'layout/header.php';
     </form>
 
     <script src="assets/fieldValidator.js"></script>
-    <script>
 
-        $("#DataEntryForm").submit(function(e){
-            e.preventDefault();
-            console.log(fieldValidator.check(DataEntryForm));
-        })
-
-        fieldValidator.initValueChecker(DataEntryForm)
-
-    </script>
 </div>
 <?php
 include_once 'layout/footer.php';

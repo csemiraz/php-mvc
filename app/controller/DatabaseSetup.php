@@ -43,7 +43,7 @@ class DatabaseSetup
         DynamicDBConfig::createEnvFile($configData);
         flash("message", "Database configuration saved successfully");
 
-        $this->migration();
+     //   $this->migration();
         return redirect('/');
 
     }
