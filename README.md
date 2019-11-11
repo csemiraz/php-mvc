@@ -42,7 +42,7 @@ $router->post('/saveData', function($request) {
 </pre>
 </li>
 <li> MVC </li>
-<li> Database COnfigaration setup from Form Input
+<li> Database Configaration setup from Form Input and create db.env file
 <pre>
    $configData = 'database=' . $this->request->get('database_name') . PHP_EOL;
         $configData .= 'user_name=' . $this->request->get('user_name') . PHP_EOL;
@@ -84,7 +84,7 @@ function redirect($route = '')
   
     
  </pre></li>
-<li> Data COmpact from controller and extract from view and access from View File 
+<li> Data Compact from controller and extract from view and access from View File 
 <pre>
 
    $purchase = new Purchase();
