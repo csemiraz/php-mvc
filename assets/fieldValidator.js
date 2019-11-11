@@ -95,13 +95,12 @@ const fieldValidator = {
                 (/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/.test(option.data) ? valueStatus = false : valueStatus = true)
                 break;
             case 'limit':
-
                 if (eval('/^.{' + option.limit + '}$/').test(option.data)) valueStatus = true;
                 break;
             case 'wordLimit':
                 let word = option.data.split(' ');
                 let limits = option.limit.split(',');
-                if (word.length >= limits[0] && word.length < limits[1]) valueStatus = true;
+                if (word.length > limits[0] && word.length < limits[1]) valueStatus = true;
                 break;
             case 'email':
                 if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(option.data)) valueStatus = true;

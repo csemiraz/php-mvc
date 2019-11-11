@@ -41,9 +41,9 @@ class DatabaseSetup
 
         // generate env file
         DynamicDBConfig::createEnvFile($configData);
-        flash("message", "Database configuration saved successfully");
+        sessionFlash("message", "Database configuration saved successfully");
 
-     //   $this->migration();
+        $this->migration();
         return redirect('/');
 
     }
@@ -68,7 +68,7 @@ class DatabaseSetup
                   `entry_by` int(10)  NOT NULL
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
-       return $DB->run($sql);
+        return $DB->run($sql);
 
     }
 

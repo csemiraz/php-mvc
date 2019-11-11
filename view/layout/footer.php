@@ -4,6 +4,23 @@
 
 <script src="assets/index.js"></script>
 
+<?php
+
+if(sessionFlash('message')){
+
+    ?>
+<script>
+    webToast.Info({
+        status:'Attention !',
+        message:"<?php echo sessionFlash('message'); ?>"
+    });
+
+</script>
+
+<?php }  ?>
+
+
+
 </body>
 </html>
 
