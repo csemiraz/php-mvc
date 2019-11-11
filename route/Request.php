@@ -16,8 +16,6 @@ class Request
      */
     public function requestDataSet(){
         $this->serverRequestDataSet();
-        $this->requestBodyDataSet();
-        $this->getRequestParamSet();
     }
 
 
@@ -52,37 +50,22 @@ class Request
     }
 
 
+
     /**
-     *set server post data as this class property
+     *  get data from request
+     * @param $name
+     * @return string
      */
-    public function requestBodyDataSet()
+    public function get($name)
     {
+        if ($this->requestMethod == "POST"){
+            return $_POST[$name] ?? null ;
 
-        if ($this->requestMethod == "POST")
-        {
-
-            foreach($_POST as $key => $value)
-            {
-                $this->{$this->makeCamelCase($key)} = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
-
+        } else  if ($this->requestMethod == "GET"){
+            return $_GET[$name] ?? null ;
         }
+    return null  ;
     }
 
 
-    /**
-     *set get data as this class property
-     */
-    public function getRequestParamSet()
-    {
-        if ($this->requestMethod == "GET")
-        {
-
-            foreach($_GET as $key => $value)
-            {
-                $this->{$this->makeCamelCase($key)}= filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
-
-        }
-    }
 }

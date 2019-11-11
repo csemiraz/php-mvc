@@ -6,9 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\config\\DatabaseConfig' => $baseDir . '/app/config/DatabaseConfig.php',
-    'App\\controller\\PurchaseController' => $baseDir . '/app/controller/PurchaseController.php',
-    'App\\models\\Purchase' => $baseDir . '/app/models/Purchase.php',
-    'Route\\Request' => $baseDir . '/route/Request.php',
-    'Route\\Router' => $baseDir . '/route/Router.php',
 );

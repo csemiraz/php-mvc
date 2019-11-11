@@ -28,20 +28,11 @@ class ComposerStaticInitfb4ecf0ee454aab9a9c7274a8239a531
         ),
     );
 
-    public static $classMap = array (
-        'App\\config\\DatabaseConfig' => __DIR__ . '/../..' . '/app/config/DatabaseConfig.php',
-        'App\\controller\\PurchaseController' => __DIR__ . '/../..' . '/app/controller/PurchaseController.php',
-        'App\\models\\Purchase' => __DIR__ . '/../..' . '/app/models/Purchase.php',
-        'Route\\Request' => __DIR__ . '/../..' . '/route/Request.php',
-        'Route\\Router' => __DIR__ . '/../..' . '/route/Router.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfb4ecf0ee454aab9a9c7274a8239a531::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfb4ecf0ee454aab9a9c7274a8239a531::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfb4ecf0ee454aab9a9c7274a8239a531::$classMap;
 
         }, null, ClassLoader::class);
     }

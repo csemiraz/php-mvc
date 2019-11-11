@@ -18,6 +18,11 @@ $router->get('/', function($request) {
    return $db->home();
 });
 
+$router->get('/Home', function($request) {
+    $db =  new HomeController($request) ;
+   return $db->home();
+});
+
 
 
 $router->get('/databaseSetup', function($request)   {
@@ -26,23 +31,31 @@ $router->get('/databaseSetup', function($request)   {
 });
 
 
+$router->post('/databaseSetup', function($request)   {
+    $db =  new DatabaseSetup($request) ;
+    return $db->saveDBConfig();
+});
 
-/*
-if(file_exists("filename.php")){
 
-$fp=fopen('filename.php','r');
-$dd =  json_decode(fgets($fp));
-echo $dd->DB;
 
-fclose($fp);
+//
+//if(file_exists("filename.php")){
+//
+//$fp=fopen('filename.php','r');
+//$dd =  json_decode(fgets($fp));
+//echo $dd->DB;
+//
+//fclose($fp);
+//
+//}else {
+//
+//    $fp = fopen('filename.php', 'w');
+//    $config = [
+//        "DB" => "test"
+//    ];
+//    fwrite($fp, json_encode($config));
+//    chmod("filename.php", 0644);
+//    fclose($fp);
+//
+//}
 
-}else{
-
-$fp=fopen('filename.php','w');
-$config = [
-	"DB"=>"test"
-];
-fwrite($fp, json_encode($config));
-chmod("filename.php",0644);
-fclose($fp);
-*/

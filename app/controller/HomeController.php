@@ -4,6 +4,9 @@
 namespace App\controller;
 
 
+use App\models\DBQuery;
+use App\utilities\DynamicDBConfig;
+
 class HomeController
 {
 
@@ -16,9 +19,11 @@ class HomeController
 
 
     public  function home(){
-     // return  redirect('databaseSetup');
-        $name = "AL EMRAN" ;
-        return view('index', compact("name"));
+
+        if (!DynamicDBConfig::checkEnv()) {
+            return redirect('/databaseSetup');
+        }
+        return view('index');
     }
 
 

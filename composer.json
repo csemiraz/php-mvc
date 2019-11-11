@@ -5,5 +5,8 @@
       "App\\": "app/",
       "Route\\": "route/"
     }
+  },
+  "require": {
+    "ext-json": "*"
   }
 }
