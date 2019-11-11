@@ -163,3 +163,9 @@ WebToast/ alert system:
 <li> JS Fetch for Ajax Request</li>
 </ul>
  
+ 
+ 
+# License
+<p>The MIT License (MIT)</p>
+
+Developed with ❤ by <a href="https://alemran.me">AL EMRAN</a>
