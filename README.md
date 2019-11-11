@@ -1,3 +1,20 @@
+#Installation or testing process
+
+<ul>
+ <li> Pull project to your server with git or download 
+  <pre>
+  git clone https://github.com/emrancu/php-mvc.git
+  </pre>
+  </li>
+<li>
+ Create a Database 
+</li>
+ <li> Open Project and submit your database name, user & password </li>
+ <li> Then Done </li>
+   
+</ul>
+
+
 # Project Highlight
 
 <ul> 
@@ -55,7 +72,8 @@ function json($data = [], $code = 200)
     header('Status: ' . $status[$code]);
     echo json_encode($data);
     return;
-}
+}  
+
 
 // redirect expected route
 function redirect($route = '')
@@ -68,9 +86,12 @@ function redirect($route = '')
  </pre></li>
 <li> Data COmpact from controller and extract from view and access from View File 
 <pre>
+
    $purchase = new Purchase();
    $purchaseData = $purchase->getAll();
    return view('index', compact('purchaseData'));
+    
+    
     
  function view($fileName, $data = [])
 {
@@ -94,6 +115,7 @@ function unsetFlashSession()
         }
     }
 }
+
 
 
 // set or get session
@@ -129,5 +151,15 @@ function sessionFlash($name, $message = '')
  <pre>
     
 </li>
+
+<li>
+Input Field Data Validation System with JS:
+ <p>Self Developed: <a href="https://github.com/emrancu/FieldValidator"> Field Validator </a></p>
+</li>
+<li>
+WebToast/ alert system:
+ <p>Self Developed: <a href="https://github.com/emrancu/webtoast"> webToast </a></p>
+</li>
+<li> JS Fetch for Ajax Request</li>
 </ul>
  
